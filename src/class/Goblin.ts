@@ -1,6 +1,6 @@
-import { IPlayer } from "../interfaces/IPlayer";
+import { ICreature } from "../interfaces/ICreature";
 
-export class Goblin implements IPlayer {
+export class Goblin implements ICreature {
     Name: string = 'Goblin';
     Strength: number = 11;
     Skill: number = 12;

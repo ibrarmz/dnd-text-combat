@@ -1,4 +1,4 @@
-export interface IPlayer {
+export interface ICreature {
     Name : string;
     Strength: number;
     Skill : number;

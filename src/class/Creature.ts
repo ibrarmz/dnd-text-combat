@@ -1,29 +1,15 @@
-import { ICreature } from "../interfaces/ICreature";
-
-export class Player implements ICreature {
-    Name: string;
-    Strength: number;
-    Skill: number;
-    Constitution: number;
-    Intelligence: number;
-    Wisdom: number;
-    Charisma: number;
-    HP: number;
-    CA: number;
-
-    constructor(name : string){
-        this.Name = name;
-        this.Strength = this.rollDice();
-        this.Skill = this.rollDice();
-        this.Constitution = this.rollDice();
-        this.Intelligence = this.rollDice();
-        this.Wisdom = this.rollDice();
-        this.Charisma = this.rollDice();
-        this.HP = 10 + this.Wisdom;
-        this.CA = this.rollDice();
-    }
-
-    showStats() {
+export class Creature  {
+    protected Name: string | undefined;
+    protected Strength: number = 0;
+    protected Skill!: number;
+    protected Constitution!: number;
+    protected Intelligence!: number;
+    protected Wisdom!: number;
+    protected Charisma!: number;
+    protected HP!: number;
+    protected CA!: number;
+    
+    protected showStats() {
         console.log(`Nombre: ${this.Name}`);
         console.log(`Fuerza: ${this.Strength}`);
         console.log(`Destreza: ${this.Skill}`);
@@ -65,6 +51,5 @@ export class Player implements ICreature {
         
         return 0;
     }
-    
     
 }
