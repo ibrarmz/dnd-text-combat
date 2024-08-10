@@ -53,6 +53,19 @@ export class GameEngine {
         }
     }
 
+    // Función para preguntar si el jugador quiere reiniciar el juego
+    private restartGame() {
+        this.rl.question('¿Quieres jugar otra vez? (sí/no): ', (respuesta) => {
+            if (respuesta.toLowerCase() === 'sí' || respuesta.toLowerCase() === 'si') {
+                this.start(); // Reinicia el juego
+            } else {
+                console.log('Gracias por jugar!');
+                this.rl.close(); // Cierra la interfaz de readline
+            }
+        });
+    }
+
+
     // Función principal que ejecuta el juego
     public start() {
         this.rl.question('Enter the name of your hero: ', (Name) => {
@@ -62,8 +75,7 @@ export class GameEngine {
             const enemy = new Goblin();
 
             this.combate(player, enemy);
-
-            this.rl.close();
+            this.restartGame();
         });
     }
 }
