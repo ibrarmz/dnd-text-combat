@@ -19,8 +19,8 @@ export class Player implements ICreature {
         this.Intelligence = this.rollDice();
         this.Wisdom = this.rollDice();
         this.Charisma = this.rollDice();
-        this.HP = 10 + this.Wisdom;
-        this.CA = this.rollDice();
+        this.HP = 8 + this.Constitution;
+        this.CA = 10 + this.Skill;
     }
 
     showStats() {
